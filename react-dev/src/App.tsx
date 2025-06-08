@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import { HeaderComponent } from "./components/HeaderComponent";
 
-function App() {
-  const [count, setCount] = useState(0)
+type ValuePiece = Date | null;
+
+type Value = ValuePiece | [ValuePiece, ValuePiece];
+
+export const App = () => {
+  const [value, onChange] = useState<Value>(new Date());
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+    <div>
+      <HeaderComponent />
+      <Calendar
+      onChange={onChange}
+      value={value}
+      calendarType="gregory" // Sunday start, Saturday end
+      locale="ja-JP" // Japanese locale
+      tileClassName={({ date }) => {
+        const day = date.getDay();
+        if (day === 0) return "sunday"; // Sunday
+        if (day === 6) return "saturday"; // Saturday
+        return null;
+      }}
+      />
+      <style>
+      {`
+        .react-calendar__tile.sunday {
+        color: red;
+        }
+        .react-calendar__tile.saturday {
+        color: blue;
+        }
+      `}
+      </style>
+    </div>
+  );
+};
