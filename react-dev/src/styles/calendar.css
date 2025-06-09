@@ -1,0 +1,70 @@
+/* 曜日ごとの色付け */
+.react-calendar__tile.sunday-tile {
+  color: red;
+}
+
+.react-calendar__tile.saturday-tile {
+  color: blue;
+}
+
+/* 横並びのレイアウト */
+.main-container {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  height: 75vh; /* 高さを少し抑える */
+}
+
+
+/* カレンダー全体を中央に */
+.calendar-wrapper {
+  flex-basis: 70%; /* 横幅を大きく */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* カレンダー本体 */
+.calendar-wrapper .react-calendar {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+  border: none;
+  border-radius: 16px;
+  padding: 24px;
+  background-color: #fff; /* 白背景に変更 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* カレンダー内部 */
+.react-calendar__navigation {
+  margin-bottom: 16px;
+}
+
+.react-calendar__month-view__weekdays {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 日付タイル全般 */
+.react-calendar__tile {
+  padding: 20px 0;
+  font-size: 1.4rem;
+  border: 1px solid #e0e0e0; /* 区切り線を追加 */
+  box-sizing: border-box;
+}
+
+/* タイルの見た目をそろえる */
+.react-calendar__month-view__days__day {
+  height: 80px;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
