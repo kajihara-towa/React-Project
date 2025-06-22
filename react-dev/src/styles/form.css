@@ -1,0 +1,80 @@
+/* 親レイアウト */
+.studentRegisterScreenLayout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.formPosition {
+  background: #fdfdfd;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+}
+
+/* 各項目ブロック */
+.studentRegister {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+/* 項目名ラベル（「受講者名」など） */
+.studentRegister > span {
+  width: 120px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ラベルと入力欄のコンテナ（姓・名などを横に並べる） */
+.inputGroup {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* 各入力ラベル＋input */
+.inputGroup label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+/* inputとselectの共通スタイル */
+.studentRegisterTextBox {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 登録ボタン */
+.registButton {
+  background-color: #fff;
+  color: #2bc241;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #2bc241;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+.buttonSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registButton:hover {
+  background-color: #007bff;
+}
